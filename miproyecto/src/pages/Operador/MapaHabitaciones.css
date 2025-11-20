@@ -1,0 +1,677 @@
+/*MapaHabitaciones.css*/
+.mapa-habitaciones {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(123, 26, 26, 0.1);
+  border: 1px solid #f0e6e6;
+}
+
+.mapa-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f0e6e6;
+}
+
+.mapa-header h2 {
+  color: #7b1a1a;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.leyenda {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.leyenda-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.color {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+.color.disponible { background: #4caf50; }
+.color.ocupada { background: #f44336; }
+.color.mantenimiento { background: #ff9800; }
+
+.habitaciones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.habitacion-card {
+  background: #f8f4f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 2px solid #e8d4d4;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.habitacion-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.habitacion-card.disponible::before { background: #4caf50; }
+.habitacion-card.ocupada::before { background: #f44336; }
+.habitacion-card.mantenimiento::before { background: #ff9800; }
+
+.habitacion-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(123, 26, 26, 0.15);
+}
+
+.habitacion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.habitacion-numero {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #7b1a1a;
+  margin: 0;
+}
+
+.estado-badge {
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.habitacion-info h4 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.habitacion-tipo {
+  color: #7b1a1a;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  text-transform: capitalize;
+}
+
+.habitacion-precio {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2e7d32;
+  margin: 0 0 0.5rem 0;
+}
+
+.habitacion-capacidad {
+  color: #666;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.habitacion-acciones {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-ver {
+  background: #7b1a1a;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-ver:hover {
+  background: #9d2b2b;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #f0e6e6;
+  background: linear-gradient(135deg, #7b1a1a, #9d2b2b);
+  color: white;
+  border-radius: 16px 16px 0 0;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.btn-cerrar {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.btn-cerrar:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.detalle-info h4 {
+  color: #7b1a1a;
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+}
+
+.detalle-info p {
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.estado-texto {
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+.acciones-modal {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.acciones-modal button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  flex: 1;
+  min-width: 140px;
+  justify-content: center;
+}
+
+.btn-checkin {
+  background: #4caf50;
+  color: white;
+}
+
+.btn-checkin:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+}
+
+.btn-checkout {
+  background: #ff9800;
+  color: white;
+}
+
+.btn-checkout:hover {
+  background: #f57c00;
+  transform: translateY(-2px);
+}
+
+.btn-mantenimiento {
+  background: #9e9e9e;
+  color: white;
+}
+
+.btn-mantenimiento:hover {
+  background: #757575;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .mapa-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .leyenda {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .habitaciones-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .acciones-modal {
+    flex-direction: column;
+  }
+
+  .acciones-modal button {
+    flex: none;
+  }
+}
+/* Estilos para GestionReservas, GestionPagos y MensajesContacto */
+.gestion-reservas,
+.gestion-pagos,
+.mensajes-contacto {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(123, 26, 26, 0.1);
+  border: 1px solid #f0e6e6;
+}
+
+/* Header de secciones */
+.reservas-header,
+.pagos-header,
+.mensajes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f0e6e6;
+}
+
+.reservas-header h2,
+.pagos-header h2,
+.mensajes-header h2 {
+  color: #7b1a1a;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* Filtros */
+.filtros {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filtro-btn {
+  padding: 0.5rem 1rem;
+  border: 2px solid #e8d4d4;
+  background: #f8f4f0;
+  color: #7b1a1a;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.filtro-btn.active,
+.filtro-btn:hover {
+  background: #7b1a1a;
+  color: white;
+  border-color: #7b1a1a;
+}
+
+/* Estadísticas */
+.reservas-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat {
+  background: #f8f4f0;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid #e8d4d4;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #7b1a1a;
+}
+
+.stat-label {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Listas y Cards */
+.reservas-list,
+.pendientes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.reserva-card,
+.pago-card {
+  background: #f8f4f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 2px solid #e8d4d4;
+  transition: all 0.3s ease;
+}
+
+.reserva-card:hover,
+.pago-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(123, 26, 26, 0.15);
+}
+
+.reserva-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.estados {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.estado-reserva,
+.estado-pago {
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.reserva-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.info-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.info-group strong {
+  color: #7b1a1a;
+  font-size: 0.9rem;
+}
+
+.reserva-actions,
+.pago-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Botones */
+.btn-ver,
+.btn-confirmar,
+.btn-cancelar,
+.btn-confirmar-pago,
+.btn-rechazar-pago,
+.btn-ver-detalles,
+.btn-actualizar,
+.btn-enviar-respuesta,
+.btn-cancelar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.btn-ver { background: #7b1a1a; color: white; }
+.btn-confirmar { background: #4caf50; color: white; }
+.btn-cancelar { background: #f44336; color: white; }
+.btn-confirmar-pago { background: #4caf50; color: white; }
+.btn-rechazar-pago { background: #f44336; color: white; }
+.btn-ver-detalles { background: #2196f3; color: white; }
+.btn-actualizar { background: #ff9800; color: white; }
+.btn-enviar-respuesta { background: #4caf50; color: white; }
+.btn-cancelar { background: #9e9e9e; color: white; }
+
+.btn-ver:hover { background: #9d2b2b; }
+.btn-confirmar:hover { background: #45a049; }
+.btn-cancelar:hover { background: #d32f2f; }
+.btn-confirmar-pago:hover { background: #45a049; }
+.btn-rechazar-pago:hover { background: #d32f2f; }
+.btn-ver-detalles:hover { background: #1976d2; }
+.btn-actualizar:hover { background: #f57c00; }
+.btn-enviar-respuesta:hover { background: #45a049; }
+.btn-cancelar:hover { background: #757575; }
+
+/* Estados vacíos */
+.sin-reservas,
+.sin-pendientes,
+.sin-historial,
+.sin-mensajes,
+.seleccionar-mensaje {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #666;
+}
+
+.sin-pendientes,
+.sin-mensajes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Tablas */
+.historial-table {
+  overflow-x: auto;
+}
+
+.historial-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.historial-table th,
+.historial-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #f0e6e6;
+}
+
+.historial-table th {
+  background: #7b1a1a;
+  color: white;
+  font-weight: 600;
+}
+
+.historial-table tr:hover {
+  background: #f8f4f0;
+}
+
+/* Mensajes de Contacto */
+.mensajes-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  min-height: 500px;
+}
+
+.bandeja-entrada,
+.panel-respuesta {
+  background: #f8f4f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #e8d4d4;
+}
+
+.bandeja-entrada h3,
+.panel-respuesta h4 {
+  color: #7b1a1a;
+  margin: 0 0 1rem 0;
+}
+
+.lista-mensajes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mensaje-item {
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.mensaje-item:hover,
+.mensaje-item.seleccionado {
+  border-color: #7b1a1a;
+  background: #fff8f8;
+}
+
+.mensaje-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.mensaje-fecha {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.mensaje-asunto {
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: #333;
+}
+
+.mensaje-preview {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.respuesta-form textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e8d4d4;
+  border-radius: 8px;
+  font-family: inherit;
+  resize: vertical;
+  margin: 1rem 0;
+}
+
+.respuesta-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.mensaje-original {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #e8d4d4;
+  margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .reservas-header,
+  .pagos-header,
+  .mensajes-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .filtros {
+    flex-wrap: wrap;
+  }
+
+  .reservas-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reserva-info {
+    grid-template-columns: 1fr;
+  }
+
+  .reserva-actions,
+  .pago-actions,
+  .respuesta-actions {
+    flex-direction: column;
+  }
+
+  .mensajes-content {
+    grid-template-columns: 1fr;
+  }
+
+  .historial-table {
+    font-size: 0.8rem;
+  }
+}

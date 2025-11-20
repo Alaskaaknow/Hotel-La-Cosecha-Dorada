@@ -1,0 +1,1128 @@
+/* ===========================================
+   🏨 HABITACIONES - MEJORAS ESTÉTICAS
+   =========================================== */
+
+.habitaciones-admin {
+  padding: 20px;
+  background: #F5F0E6;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header Mejorado */
+.habitaciones-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 20px 25px;
+  background: #491E2E;
+  border-radius: 12px;
+  color: white;
+  border: 2px solid #5A2535;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 12px rgba(73, 30, 46, 0.1);
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-icon {
+  font-size: 2rem;
+  color: #F5F0E6;
+}
+
+.habitaciones-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Botón Nueva Habitación - COLOR SÓLIDO EN HOVER */
+.btn-nueva {
+  background: #722F37;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #8B4513;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.btn-nueva:hover {
+  background: #8B4513; /* Color sólido en hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(139, 69, 19, 0.3);
+}
+
+.btn-icon {
+  font-size: 1rem;
+}
+
+/* Búsqueda Mejorada */
+.filtros-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 20px;
+}
+
+.search-box {
+  position: relative;
+  flex: 1;
+  max-width: 400px;
+}
+
+.input-busqueda {
+  width: 100%;
+  padding: 12px 45px 12px 15px;
+  border: 2px solid #E8D5C4;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.input-busqueda:focus {
+  outline: none;
+  border-color: #491E2E;
+  box-shadow: 0 0 0 3px rgba(73, 30, 46, 0.1);
+}
+
+.search-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #491E2E;
+  font-size: 1rem;
+}
+
+.filtros-info {
+  color: #491E2E;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Tabla Mejorada */
+.tabla-container {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #E8D5C4;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.tabla-habitaciones {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  font-size: 0.9rem;
+  padding: 0 10px;
+}
+
+.tabla-habitaciones th {
+  background: #491E2E;
+  color: white;
+  padding: 18px 15px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border-bottom: 2px solid #5A2535;
+}
+
+.tabla-habitaciones td {
+  padding: 15px;
+  background: white;
+  border-bottom: 1px solid #F5F0E6;
+  vertical-align: middle;
+}
+
+.fila-habitacion {
+  transition: all 0.3s ease;
+  margin: 10px 0;
+}
+
+.fila-habitacion:hover {
+  background: #F8F4EC;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.numero-fila {
+  font-weight: 600;
+  color: #491E2E;
+  font-size: 0.9rem;
+}
+
+/* Imagen de Habitación */
+.habitacion-imagen {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #E8D5C4;
+  transition: all 0.3s ease;
+}
+
+.habitacion-imagen:hover {
+  transform: scale(1.05);
+}
+
+.habitacion-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imagen-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #491E2E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: white;
+}
+
+/* Información de Habitación */
+.habitacion-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.habitacion-numero {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #491E2E;
+}
+
+.habitacion-nombre {
+  font-size: 0.8rem;
+  color: #722F37;
+  font-weight: 500;
+}
+
+/* Badges de Tipo */
+.badge-tipo {
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+}
+
+.badge-tipo:hover {
+  transform: scale(1.05);
+}
+
+.badge-tipo.simple { 
+  background: #E8D5C4;
+  color: #8B4513;
+  border: 1px solid #D4A76A;
+}
+.badge-tipo.doble { 
+  background: #722F37;
+  color: white;
+  border: 1px solid #5A2535;
+}
+.badge-tipo.familiar { 
+  background: #D4A76A;
+  color: #491E2E;
+  border: 1px solid #C19A65;
+}
+
+/* Información de Capacidad y Precio */
+.capacidad-info, .precio-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.capacidad-icono {
+  color: #491E2E;
+  font-size: 0.9rem;
+}
+
+.precio-icono {
+  color: #722F37;
+  font-size: 0.9rem;
+}
+
+.precio-info {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.precio-info strong {
+  font-size: 0.9rem;
+  color: #491E2E;
+}
+
+.precio-info span {
+  font-size: 0.75rem;
+  color: #722F37;
+}
+
+/* Estado Container */
+.estado-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.select-estado {
+  padding: 8px 12px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.select-estado:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(73, 30, 46, 0.2);
+}
+
+/* Badge de Reservas */
+.reservas-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background: #D4A76A;
+  color: #491E2E;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border: 1px solid #C19A65;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.reservas-badge:hover {
+  transform: scale(1.05);
+}
+
+.reserva-icono {
+  font-size: 0.65rem;
+}
+
+/* Acciones */
+.acciones-habitacion {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-accion {
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.btn-accion:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-calendario {
+  background: #491E2E;
+  color: white;
+  border-color: #5A2535;
+}
+
+.btn-reservas {
+  background: #722F37;
+  color: white;
+  border-color: #8B4513;
+}
+
+.btn-editar {
+  background: #D4A76A;
+  color: #491E2E;
+  border-color: #C19A65;
+}
+
+.btn-eliminar {
+  background: #8B4513;
+  color: white;
+  border-color: #722F37;
+}
+
+/* Sin resultados */
+.sin-resultados {
+  text-align: center;
+  padding: 40px 20px;
+  color: #722F37;
+}
+
+.sin-resultados-icono {
+  font-size: 2rem;
+  color: #D4A76A;
+  margin-bottom: 15px;
+}
+
+/* ===========================================
+   🎯 MODALES MEJORADOS - TÍTULOS EN BLANCO
+   =========================================== */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(73, 30, 46, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 15px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-habitacion,
+.modal-calendario,
+.modal-reservas {
+  background: white;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 800px;
+  max-height: 85vh;
+  overflow-y: auto;
+  border: 2px solid #491E2E;
+  position: relative;
+  z-index: 1001;
+  animation: slideUp 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  background: #491E2E;
+  color: white;
+  border-radius: 10px 10px 0 0;
+  position: relative;
+  z-index: 2;
+  border-bottom: 2px solid #5A2535;
+}
+
+.modal-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal-title h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white !important; /* TÍTULO EN BLANCO ASEGURADO */
+  letter-spacing: 0.5px;
+}
+
+.modal-title svg {
+  font-size: 1.3rem;
+  color: #F5F0E6;
+}
+
+.btn-cerrar {
+  background: rgba(245, 240, 230, 0.2);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+
+.btn-cerrar:hover {
+  background: rgba(245, 240, 230, 0.3);
+  transform: scale(1.1);
+}
+
+.modal-body {
+  padding: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Formulario Mejorado */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #491E2E;
+  font-size: 0.9rem;
+}
+
+.input-form, .select-form, .textarea-form {
+  padding: 12px 15px;
+  border: 1px solid #E8D5C4;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.input-form:focus, .select-form:focus, .textarea-form:focus {
+  outline: none;
+  border-color: #491E2E;
+  box-shadow: 0 0 0 3px rgba(73, 30, 46, 0.1);
+}
+
+.textarea-form {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-help {
+  color: #722F37;
+  font-size: 0.8rem;
+  margin-top: 6px;
+}
+
+.modal-footer {
+  padding: 20px 25px;
+  border-top: 1px solid #F5F0E6;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-cancelar, .btn-guardar {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 1px solid;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.btn-cancelar:hover, .btn-guardar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-cancelar {
+  background: #722F37;
+  color: white;
+  border-color: #8B4513;
+}
+
+.btn-cancelar:hover {
+  background: #8B4513;
+}
+
+.btn-guardar {
+  background: #491E2E;
+  color: white;
+  border-color: #722F37;
+}
+
+.btn-guardar:hover {
+  background: #722F37;
+}
+
+/* ===========================================
+   📅 CALENDARIO MEJORADO
+   =========================================== */
+
+.calendario-container {
+  padding: 15px;
+}
+
+.calendario-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.calendario-header h3 {
+  margin: 0;
+  color: #491E2E;
+  font-size: 1.1rem;
+  text-align: center;
+  flex: 1;
+  font-weight: 600;
+  background: #F5F0E6;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid #E8D5C4;
+}
+
+.btn-mes {
+  background: #491E2E;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #5A2535;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-mes:hover {
+  background: #722F37;
+  transform: scale(1.1);
+}
+
+/* Leyenda Mejorada */
+.leyenda-calendario {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #F5F0E6;
+  border-radius: 8px;
+  border: 1px solid #E8D5C4;
+}
+
+.leyenda-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #491E2E;
+  font-weight: 600;
+}
+
+.color-muestra {
+  width: 25px;
+  height: 25px;
+  border-radius: 6px;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.color-muestra.disponible {
+  background: #722F37;
+  border-color: #491E2E;
+}
+
+.color-muestra.reservada {
+  background: #8B4513;
+  border-color: #491E2E;
+}
+
+/* Calendario Grid */
+.calendario-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #E8D5C4;
+}
+
+.dia-header {
+  text-align: center;
+  font-weight: 700;
+  color: #491E2E;
+  padding: 12px 8px;
+  font-size: 0.85rem;
+  background: #F5F0E6;
+  border-radius: 6px;
+  border: 1px solid #E8D5C4;
+}
+
+.dia-calendario {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border: 2px solid;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.dia-calendario.disponible {
+  background: #722F37;
+  border-color: #491E2E;
+  color: white;
+}
+
+.dia-calendario.reservada {
+  background: white;
+  border-color: #8B4513;
+  color: #8B4513;
+  font-weight: 700;
+}
+
+.dia-calendario:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* ===========================================
+   📋 PANEL DE RESERVAS MEJORADO
+   =========================================== */
+
+.reservas-container {
+  padding: 15px;
+}
+
+.reservas-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.reserva-item {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  border-left: 4px solid #491E2E;
+  border: 1px solid #E8D5C4;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.reserva-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  border-left-color: #722F37;
+}
+
+.reserva-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  gap: 15px;
+}
+
+.reserva-header h4 {
+  margin: 0;
+  color: #491E2E;
+  font-size: 1.1rem;
+  font-weight: 600;
+  flex: 1;
+}
+
+.estado-reserva {
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.estado-reserva.confirmada {
+  background: #491E2E;
+  color: white;
+  border: 1px solid #5A2535;
+}
+
+.estado-reserva.completada {
+  background: #722F37;
+  color: white;
+  border: 1px solid #8B4513;
+}
+
+.estado-reserva.cancelada {
+  background: #8B4513;
+  color: white;
+  border: 1px solid #491E2E;
+}
+
+.reserva-details {
+  margin-bottom: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.reserva-details p {
+  margin: 6px 0;
+  font-size: 0.85rem;
+  color: #491E2E;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.reserva-details strong {
+  color: #722F37;
+  min-width: 100px;
+}
+
+.reserva-actions {
+  text-align: right;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-cancelar-reserva {
+  background: #8B4513;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid #722F37;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.btn-cancelar-reserva:hover {
+  background: #722F37;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.sin-reservas {
+  text-align: center;
+  padding: 40px 20px;
+  color: #722F37;
+  background: #F8F4EC;
+  border-radius: 8px;
+  border: 1px solid #E8D5C4;
+}
+
+.sin-reservas-icono {
+  font-size: 2rem;
+  color: #D4A76A;
+  margin-bottom: 15px;
+}
+
+/* Reservas Activas */
+.reservas-activas {
+  background: #F8F4EC;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #E8D5C4;
+  margin-top: 20px;
+}
+
+.reservas-activas h4 {
+  color: #491E2E;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+
+.reservas-activas ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.reservas-activas li {
+  background: white;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  border-left: 3px solid #491E2E;
+  font-size: 0.85rem;
+  color: #491E2E;
+}
+
+.reservas-activas li strong {
+  color: #722F37;
+}
+
+/* ===========================================
+   ⏳ LOADING
+   =========================================== */
+
+.habitaciones-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  color: #491E2E;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #F5F0E6;
+  border-top: 3px solid #491E2E;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ===========================================
+   📱 RESPONSIVE
+   =========================================== */
+
+@media (max-width: 1024px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .reserva-details {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .habitaciones-admin {
+    padding: 15px 10px;
+  }
+  
+  .habitaciones-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .filtros-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .search-box {
+    max-width: none;
+  }
+  
+  .tabla-container {
+    overflow-x: auto;
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+  }
+  
+  .acciones-habitacion {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .btn-accion {
+    padding: 6px;
+    font-size: 0.8rem;
+  }
+  
+  .modal-habitacion,
+  .modal-calendario,
+  .modal-reservas {
+    margin: 10px;
+    max-height: calc(100vh - 20px);
+  }
+  
+  .calendario-grid {
+    gap: 4px;
+  }
+  
+  .dia-header {
+    padding: 8px 4px;
+    font-size: 0.75rem;
+  }
+  
+  .dia-calendario {
+    font-size: 0.75rem;
+  }
+  
+  .reserva-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .leyenda-calendario {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .habitaciones-header h1 {
+    font-size: 1.4rem;
+  }
+  
+  .header-icon {
+    font-size: 1.5rem;
+  }
+  
+  .btn-nueva {
+    padding: 10px 15px;
+    font-size: 0.8rem;
+  }
+  
+  .modal-body {
+    padding: 15px;
+  }
+  
+  .modal-footer {
+    padding: 15px;
+    flex-direction: column;
+  }
+  
+  .btn-cancelar, .btn-guardar {
+    width: 100%;
+  }
+  
+  .tabla-habitaciones th,
+  .tabla-habitaciones td {
+    padding: 8px 6px;
+  }
+  
+  .calendario-header h3 {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+  
+  .btn-mes {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+}
+
+/* Scrollbar personalizado */
+.tabla-container::-webkit-scrollbar,
+.modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.tabla-container::-webkit-scrollbar-track,
+.modal-body::-webkit-scrollbar-track {
+  background: #F5F0E6;
+  border-radius: 3px;
+}
+
+.tabla-container::-webkit-scrollbar-thumb,
+.modal-body::-webkit-scrollbar-thumb {
+  background: #491E2E;
+  border-radius: 3px;
+}
+
+.tabla-container::-webkit-scrollbar-thumb:hover,
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background: #722F37;
+}
